@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./layout/Header";
+import Chat from "./layout/Chat"
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
           <footer className="flex-shrink-0">Footer</footer>
         </main>
 
-        <div className="w-[320px] flex-shrink-0">chat</div>
+        <div className="w-[320px] flex-shrink-0">
+          <Chat />
+        </div>
       </div>
     </Fragment>
   );
