@@ -1,0 +1,14 @@
+.nav-icon {
+    &:hover .first {
+        stop-color: #EC981A;
+    }
+    &:hover .second {
+        stop-color: #A96500;
+    }
+    &:hover .third {
+        stop-color: #FFC701;
+    }
+    &:hover .fourth {
+        stop-color: #EC981A;
+    }
+}
