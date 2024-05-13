@@ -19,21 +19,21 @@ const Header = () => {
             <div className='space-x-7'>
                 <Link
                     to={"/"}
-                    className='uppercase text-[#666e97] hover:text-[#ffc701] text-sm'
+                    className='uppercase text-[#666e97] hover:text-[#ffc701] text-sm transition-all'
                 >
                     LEADERBOARD
                 </Link>
 
                 <Link
                     to={"/"}
-                    className='uppercase text-[#666e97] hover:text-[#ffc701] text-sm'
+                    className='uppercase text-[#666e97] hover:text-[#ffc701] text-sm transition-all'
                 >
                     FREE CASE
                 </Link>
 
                 <Link
                     to={"/"}
-                    className='uppercase text-[#666e97] hover:text-[#ffc701] text-sm'
+                    className='uppercase text-[#666e97] hover:text-[#ffc701] text-sm transition-all'
                 >
                     RAKEBACK
                 </Link>
