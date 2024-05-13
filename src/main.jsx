@@ -2,14 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Dashboard from './pages/Dashboard.jsx'
 
 const router = createBrowserRouter([
   {
-    path:"/",
+    path: "/",
     element: <App />,
     children: [
-      // @todo
+      {
+        path: "dashboard",
+        element: <Dashboard />
+      }
     ]
   }
 ])
