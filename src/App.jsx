@@ -1,14 +1,14 @@
 import { Fragment, useEffect } from 'react'
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import Header from './layout/Header';
-import Chat from './layout/Chat';
-import Navbar from './layout/Navbar';
-import "slick-carousel/slick/slick.css";
+import { Outlet, useNavigate, useLocation } from 'react-router-dom'
+import Header, {SubHeader} from './layout/Header'
+import Chat from './layout/Chat'
+import Navbar from './layout/Navbar'
+import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 const App = () => {
-  const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
 
   useEffect(() => {
     if (pathname === "/") {
@@ -28,11 +28,11 @@ const App = () => {
               <Navbar />
 
               <article className='flex-shrink-0 flex-grow'>
+                <SubHeader />
                 <Outlet />
               </article>
             </div>
           </main>
-          <footer className='flex-shrink-0'>Footer</footer>
         </main>
 
         <div className="w-[320px] flex-shrink-0">
@@ -44,4 +44,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default App
