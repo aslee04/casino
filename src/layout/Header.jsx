@@ -13,6 +13,8 @@ import LogoText from "../assets/logo-text.svg"
 import Image from '../components/Image'
 import Modal, { ModalContent } from '../components/Modal'
 import DashboardStyle from "../pages/pages.module.css"
+import Monet from "../assets/monet.png"
+import BgImage from "../assets/BgImage.png"
 import {TbCopy} from "react-icons/tb"
 import {CopyToClipboard} from 'react-copy-to-clipboard'
 
@@ -33,13 +35,13 @@ export const SubHeader = () => {
                 IsOpen && <Modal setIsOpen={setIsOpen}>
                     <ModalContent setIsOpen={setIsOpen} title={'Affiliates'}>
                         <div className='flex pt-6'>
-                            <button type='button' className={`${ActiveIcon === 5 ? 'bg-[#272f48]' : 'bg-[transparent]'} pt-1.5 pb-1.5 px-4 uppercase hover:bg-[#272F48] rounded transition ease-in-out duration-400`}>
+                            <button type='button' className='pt-1.5 pb-1.5 px-4 uppercase text-[#8c98a9] hover:bg-[#737999] hover:text-[#1b2235] rounded-sm transition ease-in-out duration-400'>
                                 Overview
                             </button>
-                            <button type='button' className='pt-1.5 pb-1.5 px-4 uppercase hover:bg-[#272F48] rounded transition ease-in-out duration-400'>
+                            <button type='button' className='pt-1.5 pb-1.5 px-4 uppercase text-[#8c98a9] hover:bg-[#737999] hover:text-[#1b2235] rounded-sm transition ease-in-out duration-400'>
                                 Users
                             </button>
-                            <button type='button' className='pt-1.5 pb-1.5 px-4 uppercase hover:bg-[#272F48] rounded transition ease-in-out duration-400'>
+                            <button type='button' className='pt-1.5 pb-1.5 px-4 uppercase text-[#8c98a9] hover:bg-[#737999] hover:text-[#1b2235] rounded-sm transition ease-in-out duration-400'>
                                 Tiers
                             </button>
                         </div>
@@ -57,6 +59,53 @@ export const SubHeader = () => {
                                     Your affiliate link
                                 </h3>
                                 <input type="url" value={'https://rustyloot.gg/r/undefined'} className='border-none rounded p-2 bg-[#20273d] text-[#9ca3af] text-sm mt-1 w-[407px] h-[36px]' />
+                            </div>
+                        </div>
+
+                        <button type="button" className='block border-none rounded-sm w-[208px] h-[40px] rounded text-sm text-[#8c98a9] font-semibold bg-transparent uppercase hover:bg-[#ffc138] hover:text-[#161b2a] mt-4 transition-all duration-300'>
+                            Create Code
+                        </button>
+
+                        <div className="grid grid-col gap-4 mt-4">
+                            <div className="row-start-1 row-auto w-[233px] h-[80px] bg-[#22273e]">
+                                <div className='flex gap-3 pt-[18px] pl-[16px]'>
+                                    <img src={Monet} alt="Monet Image" />
+                                    <p className='font-bold'>0</p>
+                                </div>
+                                <p className='text-center text-sm font-normal text-[#8c98a9] mt-2'>depositors</p>
+                            </div>
+                            <div className="row-start-1 row-auto w-[233px] h-[80px] bg-[#22273e]">
+                                <div className='flex gap-3 pt-[18px] pl-[16px]'>
+                                    <img src={Monet} alt="Monet Image" />
+                                    <p className='font-bold'>0</p>
+                                </div>
+                                <p className='text-center text-sm font-normal text-[#8c98a9] mt-2'>depositors</p>
+                            </div>
+                            <div className="row-start-1 row-auto w-[233px] h-[80px] bg-[#22273e]">
+                                <div className='flex gap-3 pt-[18px] pl-[16px]'>
+                                    <img src={Monet} alt="Monet Image" />
+                                    <p className='font-bold'>0</p>
+                                </div>
+                                <p className='text-center text-sm font-normal text-[#8c98a9] mt-2'>depositors</p>
+                            </div>
+                        </div>
+
+                        <div className='flex flex-col justify-center items-center mt-4 w-[732px] h-[344px] bg-[#222939]'>
+                            <div className='pb-4'>
+                                <div className='border-solid border-2 border-[#ffc701] w-[40px] h-[40px] bg-[#161b2a] rounded-full'></div>
+                                <h3 className='font-bold text-sm'>Unknown</h3>
+                                <p className='font-normal text-sm text-[#8c98a9] capitalize'>0.00% Progress to next tier</p>
+                            </div>
+
+                            <div className='w-[480px] h-[16px] bg-[#22273e] rounded-full pb-4'></div>
+
+                            <div className='flex items-center'>
+                                <div className='flex justify-between gap-3'>
+                                    <img src={Monet} alt="" />
+                                    <p>0</p>
+                                </div>
+
+                                <p className='text-[#8c98a9] text-xl mt-2'>Available earnings</p>
                             </div>
                         </div>
                     </ModalContent>
