@@ -18,7 +18,7 @@ const Navbar = () => {
 
             <ul className='space-y-3 py-4 '>
                 <li className=''  >
-                    <Link to={"/"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
+                    <Link to={"/dashboard"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
                         <MainIconSvg className={"Nav-icon"} />
 
                         <p className='uppercase font-bold'>main</p>
@@ -27,7 +27,7 @@ const Navbar = () => {
             </ul>
             <ul className='space-y-3 py-4 '>
                 <li className=''  >
-                    <Link to={"/"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
+                    <Link to={"/jackpot"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
                         <JackIconSvg className={"Jack-icon"} />
 
                         <p className='uppercase font-bold'>JackPot</p>
@@ -39,7 +39,7 @@ const Navbar = () => {
             </ul>
             <ul className='space-y-3 py-4 '>
                 <li className=''  >
-                    <Link to={"/"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
+                    <Link to={"/coin-flip"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
                         <CoinIconSvg className={"Jack-icon"} />
 
                         <p className='uppercase font-bold'>Coinflip</p>
@@ -51,7 +51,7 @@ const Navbar = () => {
             </ul>
             <ul className='space-y-3 py-4 '>
                 <li className=''  >
-                    <Link to={"/"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
+                    <Link to={"/mines"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
                         <MinesIconSvg className={"Mine-icon"} />
 
                         <p className='uppercase font-bold'>Mines</p>
@@ -60,7 +60,7 @@ const Navbar = () => {
             </ul>
             <ul className='space-y-3 py-4 '>
                 <li className=''  >
-                    <Link to={"/"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
+                    <Link to={"/plinko"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
                         <PlinkoIconSvg className={"Plinko-icon"} />
 
                         <p className='uppercase font-bold'>Plinko</p>
@@ -78,7 +78,7 @@ const Navbar = () => {
             </ul>
             <ul className='space-y-3 py-4 '>
                 <li className=''  >
-                    <Link to={"/"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
+                    <Link to={"/upgrade"} className='flex flex-col gap-2 items-center text-[#666e97] text-xs hover:text-[#FFC701] ease-in-out duration-300'>
                         <UpgIconSvg className={"Upg-icon"} />
 
                         <p className='uppercase font-bold'>Upgrader</p>

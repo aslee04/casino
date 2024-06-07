@@ -1,27 +1,35 @@
 import React, { useState } from 'react'
-import Image from '../components/Image'
-import { Link } from "react-router-dom"
-import DashboardStyle from "./pages.module.css"
-import classNames from 'classnames'
-import BannerImage from "./../assets/banner.jpg"
-import Slider from 'react-slick'
+import { BiShieldAlt2 } from "react-icons/bi";
+import { HiOutlineUsers } from "react-icons/hi2";
+import LogoText from "./../assets/logo-text.svg";
+import { TfiHeadphoneAlt } from "react-icons/tfi";
+import { FaRegStar } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
+import Image from '../components/Image';
+import { Link } from "react-router-dom";
+import { US } from 'country-flag-icons/react/3x2'
+import { IoIosArrowBack } from "react-icons/io";
+import DashboardStyle from "./pages.module.css";
+import classNames from 'classnames';
+import BannerImage from "./../assets/banner.jpg";
+import Slider from 'react-slick';
 import PlinkoImage from "../assets/games/plinko.png"
 import WheelImage from "../assets/games/wheel.png"
 import MinesImage from "../assets/games/mines.png"
-import JackpotImage from "../assets/games/jackpot.png"
+import JackpotImage from "../assets/games/jackpot.png";
 // 
-import PvpMines from "../assets/games/pvp.png"
-import Coinflip from "../assets/games/coinflip.png"
-import Upgrader from "../assets/games/upgrader.png"
-import Button from '../components/Button'
-import { LuTimer } from "react-icons/lu"
+import PvpMines from "../assets/games/pvp.png";
+import Coinflip from "../assets/games/coinflip.png";
+import Upgrader from "../assets/games/upgrader.png";
+import Button from '../components/Button';
+import { LuTimer } from "react-icons/lu";
 
 const Dashboard = () => {
 
-    const [Timer, setTimer] = useState("00:00:00")
+    const [Timer, setTimer] = useState("00:00:00");
 
     setInterval(() => {
-        const date = new Date()
+        const date = new Date();
 
         setTimer(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`)
     }, 1000)
@@ -37,6 +45,8 @@ const Dashboard = () => {
 
     return (
         <section>
+            
+
             <section className="">
                 <Slider {...settings} className={classNames(DashboardStyle["Home__slider"], "mx-auto")}>
                     <div>
@@ -73,21 +83,21 @@ const Dashboard = () => {
                 </div>
 
                 <div className="grid grid-cols-3 gap-3">
-                    <Link to={"/"} className={classNames(DashboardStyle["Home__game-link"])}>
-                        <Image src={PvpMines} srcSet={PvpMines} />
+                    <Link to={"/"}>
+                        <Image src={PlinkoImage} srcSet={PlinkoImage} />
                     </Link>
 
-                    <Link to={"/"} className={classNames(DashboardStyle["Home__game-link"])}>
-                        <Image src={Coinflip} srcSet={Coinflip} />
+                    <Link to={"/"}>
+                        <Image src={PlinkoImage} srcSet={PlinkoImage} />
                     </Link>
 
-                    <Link to={"/"} className={classNames(DashboardStyle["Home__game-link"])}>
-                        <Image src={Upgrader} srcSet={Upgrader} />
+                    <Link to={"/"}>
+                        <Image src={PlinkoImage} srcSet={PlinkoImage} />
                     </Link>
                 </div>
             </section>
 
-            <footer className='px-9 pt-24 pb-[40px] relative'>
+            <footer className='px-9 pt-24 relative'>
                 <div className="text-center">
                     <div className='flex justify-center gap-x-10 items-center'>
                         <span className='h-0.5 bg-gradient-to-r from-[#272F48] to-[#434B71] flex-grow'></span>

@@ -7,18 +7,19 @@
     max-width: calc((100vw - 1036px) * 1.6);
 }
 
-.Home__game-link{
+.Home__game-link {
     overflow: hidden;
     min-width: 250px;
     width: 100%;
 }
-.Home__game-link img{
+
+.Home__game-link img {
     transform: scale(1);
     transition: all 0.3s linear;
 }
 
 
-.Home__game-link:hover img{
+.Home__game-link:hover img {
     transform: scale(1.1);
     transition: all 0.3s linear;
 }

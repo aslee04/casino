@@ -3,9 +3,9 @@ import React from 'react'
 const DailyCases = () => {
   return (
     <section>
-        Daily
+      Daily
     </section>
   )
 }
 
-export default DailyCases
+export default DailyCases;
