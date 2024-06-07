@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {},
+    // colors:{
+    //   buttonBg:'rgb(39, 47, 72);'
+    // }
   },
   plugins: [],
 }

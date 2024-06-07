@@ -13,17 +13,52 @@ import { FiMenu } from 'react-icons/fi'
 import classNames from 'classnames'
 import DashboardStyle from "../pages/pages.module.css"
 import LogoText from "../assets/logo-text.svg"
+import Modal, { ModalContent } from '../components/Modal'
+import CopyToClipboard from 'react-copy-to-clipboard'
 
 export const SubHeader = () => {
     const [ActiveIcon, setActiveIcon] = useState(0)
     const handleActiveIcon = (id) => setActiveIcon(id)
+    
+    const [IsOpen, setIsOpen] = useState(false)
+    const handleModal = () => {
+        setIsOpen(prev => !prev)
+        setActiveIcon(IsOpen ? ActiveIcon : 1)
+    }
+    const [CopyValue, setCopyValue] = useState('')
+    const [Copied, setCopied] = useState(false)
 
     return <Fragment>
+            {
+                IsOpen && <Modal setIsOpen={setIsOpen}>
+                    <ModalContent setIsOpen={setIsOpen} title={'Affiliates'}>
+                        <div className='flex pt-6'>
+                            <button type='button' className='pt-1.5 pb-1.5 px-4 uppercase hover:bg-[#272F48] rounded transition ease-in-out duration-400'>
+                                Overview
+                            </button>
+                            <button type='button' className='pt-1.5 pb-1.5 px-4 uppercase hover:bg-[#272F48] rounded transition ease-in-out duration-400'>
+                                Users
+                            </button>
+                            <button type='button' className='pt-1.5 pb-1.5 px-4 uppercase hover:bg-[#272F48] rounded transition ease-in-out duration-400'>
+                                Tiers
+                            </button>
+                        </div>
+
+                        <h3 className='text-center pt-6 font-base text-[#8C98A9]'>
+                            Your affiliate link
+                        </h3>
+
+                        <div className=''>
+
+                        </div>
+                    </ModalContent>
+                </Modal>
+            }
             <header className='bg-[#131620] py-6 px-8 flex items-center justify-between'>
                 <Image className={classNames(DashboardStyle["Home__header-img"])} src={LogoText} srcSet={LogoText} />
 
                 <div className='flex-grow text-center space-x-6'>
-                    <button className={`${ActiveIcon === 1 ? "text-[#EC981A]" : "text-[#4d5b97]"} hover:text-[#EC981A] text-xl border-none outline-none bg-transparent`} onClick={() => handleActiveIcon(1)}>
+                    <button className={`${ActiveIcon === 1 ? "text-[#EC981A]" : "text-[#4d5b97]"} hover:text-[#EC981A] text-xl border-none outline-none bg-transparent`} onClick={() => {handleActiveIcon(1), handleModal()}}>
                         <BiShieldAlt2 className='inline-block' />
                     </button>
 
