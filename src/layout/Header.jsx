@@ -1,56 +1,44 @@
-import React, { Fragment, useState } from 'react'
-import { BsDiscord } from "react-icons/bs"
-import { BsTwitter } from "react-icons/bs"
-import { Link } from 'react-router-dom'
-import Image from '../components/Image'
-import { BiShieldAlt2 } from 'react-icons/bi'
-import { TfiHeadphoneAlt } from 'react-icons/tfi'
-import { HiOutlineUsers } from 'react-icons/hi2'
-import { FaRegStar } from 'react-icons/fa6'
 import { US } from 'country-flag-icons/react/3x2'
-import { IoIosArrowBack } from 'react-icons/io'
+import React, { Fragment, useState, useReducer } from 'react'
+import { BiShieldAlt2 } from 'react-icons/bi'
+import { BsDiscord, BsTwitter } from "react-icons/bs"
+import { FaRegStar } from 'react-icons/fa6'
 import { FiMenu } from 'react-icons/fi'
+import { HiOutlineUsers } from 'react-icons/hi2'
+import { IoIosArrowBack } from 'react-icons/io'
+import { TfiHeadphoneAlt } from 'react-icons/tfi'
+import { Link } from 'react-router-dom'
 import classNames from 'classnames'
-import DashboardStyle from "../pages/pages.module.css"
 import LogoText from "../assets/logo-text.svg"
+import Image from '../components/Image'
 import Modal, { ModalContent } from '../components/Modal'
-import CopyToClipboard from 'react-copy-to-clipboard'
+import DashboardStyle from "../pages/pages.module.css"
+import Monet from "../assets/monet.png"
+import { reducerModal } from '../modules/modal'
+import BgImage from "../assets/BgImage.png"
+import {TbCopy} from "react-icons/tb"
+import {CopyToClipboard} from 'react-copy-to-clipboard'
 
 export const SubHeader = () => {
     const [ActiveIcon, setActiveIcon] = useState(0)
     const handleActiveIcon = (id) => setActiveIcon(id)
-    
+
     const [IsOpen, setIsOpen] = useState(false)
-    const handleModal = () => {
+    const handleModal = (type) => {
         setIsOpen(prev => !prev)
         setActiveIcon(IsOpen ? ActiveIcon : 1)
+        dispatch({ type })
     }
     const [CopyValue, setCopyValue] = useState('')
     const [Copied, setCopied] = useState(false)
+
+    const [state, dispatch] = useReducer(reducerModal, {content: 'Empty'})
 
     return <Fragment>
             {
                 IsOpen && <Modal setIsOpen={setIsOpen}>
                     <ModalContent setIsOpen={setIsOpen} title={'Affiliates'}>
-                        <div className='flex pt-6'>
-                            <button type='button' className='pt-1.5 pb-1.5 px-4 uppercase hover:bg-[#272F48] rounded transition ease-in-out duration-400'>
-                                Overview
-                            </button>
-                            <button type='button' className='pt-1.5 pb-1.5 px-4 uppercase hover:bg-[#272F48] rounded transition ease-in-out duration-400'>
-                                Users
-                            </button>
-                            <button type='button' className='pt-1.5 pb-1.5 px-4 uppercase hover:bg-[#272F48] rounded transition ease-in-out duration-400'>
-                                Tiers
-                            </button>
-                        </div>
-
-                        <h3 className='text-center pt-6 font-base text-[#8C98A9]'>
-                            Your affiliate link
-                        </h3>
-
-                        <div className=''>
-
-                        </div>
+                        {state?.content}
                     </ModalContent>
                 </Modal>
             }
@@ -58,15 +46,15 @@ export const SubHeader = () => {
                 <Image className={classNames(DashboardStyle["Home__header-img"])} src={LogoText} srcSet={LogoText} />
 
                 <div className='flex-grow text-center space-x-6'>
-                    <button className={`${ActiveIcon === 1 ? "text-[#EC981A]" : "text-[#4d5b97]"} hover:text-[#EC981A] text-xl border-none outline-none bg-transparent`} onClick={() => {handleActiveIcon(1), handleModal()}}>
+                    <button className={`${ActiveIcon === 1 ? "text-[#EC981A]" : "text-[#4d5b97]"} hover:text-[#EC981A] text-xl border-none outline-none bg-transparent`} onClick={() => {handleActiveIcon(1), handleModal("FREE_COINS")}}>
                         <BiShieldAlt2 className='inline-block' />
                     </button>
 
-                    <button className={`${ActiveIcon === 2 ? "text-[#EC981A]" : "text-[#4d5b97]"} hover:text-[#EC981A] text-xl border-none outline-none bg-transparent`} onClick={() => handleActiveIcon(2)}>
+                    <button className={`${ActiveIcon === 2 ? "text-[#EC981A]" : "text-[#4d5b97]"} hover:text-[#EC981A] text-xl border-none outline-none bg-transparent`} onClick={() => {handleActiveIcon(2), handleModal("AFFILIATES")}}>
                         <TfiHeadphoneAlt className='inline-block' />
                     </button>
 
-                    <button className={`${ActiveIcon === 3 ? "text-[#EC981A]" : "text-[#4d5b97]"} hover:text-[#EC981A] text-xl border-none outline-none bg-transparent`} onClick={() => handleActiveIcon(3)}>
+                    <button className={`${ActiveIcon === 3 ? "text-[#EC981A]" : "text-[#4d5b97]"} hover:text-[#EC981A] text-xl border-none outline-none bg-transparent`} onClick={() => {handleActiveIcon(3), handleModal("PROFILE")}}>
                         <HiOutlineUsers className='inline-block' />
                     </button>
 
