@@ -87,7 +87,7 @@ const Dashboard = () => {
                 </div>
             </section>
 
-            <footer className='px-9 pt-24 pb-[40px] relative'>
+            <footer className='px-9 pt-24 relative'>
                 <div className="text-center">
                     <div className='flex justify-center gap-x-10 items-center'>
                         <span className='h-0.5 bg-gradient-to-r from-[#272F48] to-[#434B71] flex-grow'></span>
